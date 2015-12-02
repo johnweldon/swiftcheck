@@ -72,6 +72,7 @@ func swifttest(w http.ResponseWriter, r *http.Request) {
 			d.Error = err
 		} else {
 			d.Items = items
+			d.Success = true
 		}
 	}
 	t.Execute(w, d)
