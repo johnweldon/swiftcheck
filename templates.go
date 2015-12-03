@@ -4,8 +4,10 @@ const (
 	indexTemplate = `
 <html><head>
 	<title>{{ .Title }}</title>
+	<link href='app.css' rel='stylesheet' />
+	<script src='app.js'></script>
 </head><body>
-	<div>
+	<div class='main'>
 		<h1>Swift Credential Test</h1>
 		<form action='{{ .Action }}' method='post' id='testform' target='_self'>
 			<fieldset>
@@ -25,8 +27,10 @@ const (
 	swifttestTemplate = `
 <html><head>
 	<title>{{ if .Success }}It Works!{{ else }}Problem :({{ end }}</title>
+	<link href='app.css' rel='stylesheet' />
+	<script src='app.js'></script>
 </head><body>
-	<div>
+	<div class='main'>
 	<h1>{{ if .Success }}It Works!{{ else }}There was a problem{{ end }}</h1>
 	{{ with .Error }}<span class='error'>{{ . }}</span>{{ end }}
 	{{ with .Vars }}
